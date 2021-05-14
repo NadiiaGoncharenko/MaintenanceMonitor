@@ -21,4 +21,10 @@ public class WebServer {
         status = newStatus;
         return newStatus;
     }
+
+    @DELETE
+    public String reset() {
+        status = "-";
+        return "OK";
+    }
 }
