@@ -14,4 +14,11 @@ public class WebServer {
         Response.ResponseBuilder rb = Response.ok(status);
         return rb.header("Access-Control-Allow-Origin", "*").build();
     }
+
+    @POST
+    @Path("/{newStatus}")
+    public String setStatus(@PathParam("newStatus") String newStatus) {
+        status = newStatus;
+        return newStatus;
+    }
 }
