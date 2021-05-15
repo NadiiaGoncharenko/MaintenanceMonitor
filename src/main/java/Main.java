@@ -6,13 +6,19 @@ import java.io.IOException;
 import java.net.URI;
 
 public class Main {
+
+    final static String welcome = "Hello maintenanceMonitor!";
+
     public static void main(String[] args) {
-        System.out.println(GetMessage());
+
+
+        //welcome message
+        System.out.println(getMessage());
 
         ResourceConfig rc = new ResourceConfig()
                 .packages("at.huber.swlcm.maintenancemonitor.controllers");
         HttpServer server = JdkHttpServerFactory.createHttpServer(URI.create("http://localhost:8080/"), rc);
-        System.out.println("server started");
+        System.out.println("Server started");
 
         try {
             System.in.read();
@@ -23,7 +29,7 @@ public class Main {
         server.stop(0);
     }
 
-    public static String GetMessage() {
-        return "hello rot13";
+    public static String getMessage() {
+        return welcome;
     }
 }
